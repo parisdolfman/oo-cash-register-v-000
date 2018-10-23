@@ -13,9 +13,21 @@ end
 
 
 def add_item(title, price, quantity = 1)
-  self.total = price * quantity
+  @price = price
+  @total += price * quantity
   @items << title
 end
+
+def apply_discount(discount)
+  @discount = discount
+  if @discount != 0
+   @total -= @total * @discount / 100
+   "After the discount, the total comes to $#{@total}"
+  else
+    "There is no discount to apply."
+  end
+end
+
 
 
 end
