@@ -29,8 +29,8 @@ end
 
 def items
   items_list = []
-  @items.each do |item| #need a times do loop using quantity for the number
-  items_list << item
+  @items.quantity.times do |item| #need a times do loop using quantity for the number
+  items_list << item #issue lies here, not accounting for quantity; need to shovel quantity times
   end
 end
 
