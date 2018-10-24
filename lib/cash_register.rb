@@ -28,8 +28,9 @@ def apply_discount(discount = 0) #discount optional
 end
 
 def items
-  @items.each do |item_name|
-  @items << item_name
+  items_list = []
+  @items.each do |item| #need a times do loop using quantity for the number
+  items_list << item
   end
 end
 
