@@ -19,7 +19,6 @@ def add_item(title, price, quantity = 1)
 end
 
 def apply_discount(discount = 0)
-  @discount = discount
   if @discount == 0
    "There is no discount to apply."
   else
