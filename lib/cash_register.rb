@@ -1,4 +1,4 @@
-
+require 'pry'
 
 class CashRegister
 
@@ -18,8 +18,9 @@ end
 def add_item(title, price, quantity = 1) #three arguments, one optional or auto equal 1 is unused
   @price = price #setting to instance variable
   @total += price * quantity #the price times quantity plus the total is equal to @ total
-  quantity.times do
+  quantity.times do #without this line, title was only equal to one - now were doing title * quantity shoveled to @items
     @items << title #shovel title onto @items variable
+  @last_trans = @total
   end
 end
 
@@ -32,7 +33,9 @@ def apply_discount(discount = 0) #discount optional
   end
 end
 
-
+def void_last_transaction
+  @total -= @last_trans
+end
 
 
 
