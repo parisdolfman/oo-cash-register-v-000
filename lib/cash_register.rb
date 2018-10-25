@@ -1,7 +1,8 @@
 
+
 class CashRegister
 
-attr_accessor :total, :discount, :items #reader & writer methods for each variable
+attr_accessor :total, :discount, :items, :quantity #reader & writer methods for each variable
 
 
 def initialize(discount = 0) #discount set to optional
@@ -9,13 +10,17 @@ def initialize(discount = 0) #discount set to optional
   @total = 0  #counter set to 0
   @discount = discount
   @items = [] #sets variable to equal empty array
+  @quantity = quantity
+
 end
 
 
 def add_item(title, price, quantity = 1) #three arguments, one optional or auto equal 1 is unused
   @price = price #setting to instance variable
   @total += price * quantity #the price times quantity plus the total is equal to @ total
-  @items << title #shovel title onto @items variable
+  quantity.times do
+    @items << title #shovel title onto @items variable
+  end
 end
 
 def apply_discount(discount = 0) #discount optional
@@ -27,12 +32,8 @@ def apply_discount(discount = 0) #discount optional
   end
 end
 
-def items
-  items_list = []
-  @items.quantity.times do |item| #need a times do loop using quantity for the number
-  items_list << item #issue lies here, not accounting for quantity; need to shovel quantity times
-  end
-end
+
+
 
 
 end
